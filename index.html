@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Task Manager</h1>
+
+      <div class="input-group">
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="Escribe una nueva tarea..."
+        />
+        <button id="addBtn">Agregar</button>
+      </div>
+
+      <ul id="taskList"></ul>
+      <p id="emptyMessage" class="hidden">No hay tareas pendientes.</p>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
