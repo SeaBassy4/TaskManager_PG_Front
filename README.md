@@ -18,5 +18,5 @@ A lightweight, responsive web interface for managing tasks. This is the frontend
 
 ## Live Demo
 
-- **Frontend:** https://taskmangpg.vercel.app/
+- **Frontend:** https://taskmngrfront.vercel.app/
 - **Backend API:** Hosted on Render
