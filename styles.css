@@ -1,4 +1,3 @@
-/* Obsidian-inspired Theme Variables */
 :root {
     --bg-main: #1e1e20;
     --bg-sidebar: #18181a;
@@ -7,7 +6,7 @@
     
     --text-primary: #dcddde;
     --text-muted: #8b8b90;
-    --text-accent: #a882ff; /* Obsidian purple */
+    --text-accent: #a882ff; 
     
     --border-color: #36363a;
     --border-hover: #525258;
@@ -39,7 +38,7 @@ body {
     border-right: 1px solid var(--border-color);
 }
 
-/* Sidebar Styling */
+
 .sidebar {
     width: 200px;
     background-color: var(--bg-sidebar);
@@ -60,7 +59,7 @@ body {
     color: var(--text-accent);
 }
 
-/* Workspace Styling */
+
 .workspace {
     flex: 1;
     padding: 40px 60px;
@@ -84,7 +83,7 @@ h1 {
     user-select: none;
 }
 
-/* Input Area */
+
 .input-group {
     display: flex;
     align-items: center;
@@ -136,7 +135,6 @@ button#addBtn:hover {
     color: white;
 }
 
-/* Task List */
 ul {
     list-style: none;
 }
@@ -165,7 +163,6 @@ li:hover {
     transition: all 0.2s;
 }
 
-/* Minimalist delete button that only turns red on hover */
 li:hover .delete-btn {
     border-color: var(--border-color);
 }

@@ -1,4 +1,3 @@
-// Constantes y selección de elementos del DOM
 const API_URL = "https://taskmanager-pg-back.onrender.com/tasks"; // Vercel
 
 const taskInput = document.getElementById("taskInput");
@@ -6,11 +5,10 @@ const addBtn = document.getElementById("addBtn");
 const taskList = document.getElementById("taskList");
 const emptyMessage = document.getElementById("emptyMessage");
 
-// Event Listeners
 document.addEventListener("DOMContentLoaded", fetchTasks);
 addBtn.addEventListener("click", addTask);
 
-// También permitimos agregar tareas presionando "Enter"
+// Agregar tareas presionando "Enter"
 taskInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") addTask();
 });
@@ -29,7 +27,7 @@ async function fetchTasks() {
 // POST - Crear tarea
 async function addTask() {
   const title = taskInput.value.trim();
-  if (!title) return; // Si está vacío, no hace nada
+  if (!title) return; // si está vacío, no hace nada
 
   try {
     const response = await fetch(API_URL, {
@@ -39,8 +37,8 @@ async function addTask() {
     });
 
     if (response.ok) {
-      taskInput.value = ""; // Limpia el input
-      fetchTasks(); // Recarga la lista
+      taskInput.value = ""; // limpia el input
+      fetchTasks(); // recarga la lista
     }
   } catch (error) {
     console.error("Error al guardar la tarea:", error);
@@ -62,7 +60,6 @@ async function deleteTask(id) {
   }
 }
 
-// Función para pintar el HTML dinámicamente
 function renderTasks(tasks) {
   taskList.innerHTML = "";
 
