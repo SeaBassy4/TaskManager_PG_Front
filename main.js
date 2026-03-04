@@ -1,5 +1,5 @@
 // Constantes y selección de elementos del DOM
-const API_URL = "https://taskmanager-pg-back.onrender.com";
+const API_URL = "https://taskmanager-pg-back.onrender.com/tasks";
 
 const taskInput = document.getElementById("taskInput");
 const addBtn = document.getElementById("addBtn");
