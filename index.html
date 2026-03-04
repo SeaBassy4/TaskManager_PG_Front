@@ -1,26 +1,40 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task Manager</title>
+    <title>Tasks - Obsidian Style</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Task Manager</h1>
-
-      <div class="input-group">
-        <input
-          type="text"
-          id="taskInput"
-          placeholder="Escribe una nueva tarea..."
-        />
-        <button id="addBtn">Agregar</button>
+    <div class="app-container">
+      <div class="sidebar">
+        <div class="sidebar-item active">📄 tasks.md</div>
       </div>
 
-      <ul id="taskList"></ul>
-      <p id="emptyMessage" class="hidden">No hay tareas pendientes.</p>
+      <div class="workspace">
+        <header>
+          <h1><span class="md-symbol">#</span> Task Manager</h1>
+        </header>
+
+        <div class="input-group">
+          <span class="prompt-symbol">></span>
+          <input
+            type="text"
+            id="taskInput"
+            placeholder="Type a new task and press Enter..."
+            autocomplete="off"
+          />
+          <button id="addBtn">Add</button>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <p id="emptyMessage" class="hidden">
+          <span class="md-symbol">*</span> No tasks pending. Your workspace is
+          clear.
+        </p>
+      </div>
     </div>
 
     <script src="main.js"></script>

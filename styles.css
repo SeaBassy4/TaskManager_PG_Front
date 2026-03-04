@@ -1,3 +1,21 @@
+/* Obsidian-inspired Theme Variables */
+:root {
+    --bg-main: #1e1e20;
+    --bg-sidebar: #18181a;
+    --bg-panel: #262629;
+    --bg-input: #141415;
+    
+    --text-primary: #dcddde;
+    --text-muted: #8b8b90;
+    --text-accent: #a882ff; /* Obsidian purple */
+    
+    --border-color: #36363a;
+    --border-hover: #525258;
+    
+    --danger: #ef4444;
+    --danger-hover: #ff6b6b;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,55 +23,120 @@
 }
 
 body {
-    font-family: system-ui, -apple-system, sans-serif;
-    background-color: #f4f4f9;
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    height: 100vh;
     display: flex;
-    justify-content: center;
-    padding-top: 50px;
 }
 
-.container {
-    background: white;
-    padding: 20px 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+.app-container {
+    display: flex;
     width: 100%;
-    max-width: 400px;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 200px;
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border-color);
+    padding: 20px 10px;
+}
+
+.sidebar-item {
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--text-muted);
+    cursor: default;
+}
+
+.sidebar-item.active {
+    background-color: var(--bg-panel);
+    color: var(--text-accent);
+}
+
+/* Workspace Styling */
+.workspace {
+    flex: 1;
+    padding: 40px 60px;
+    background-color: var(--bg-main);
+}
+
+header {
+    margin-bottom: 40px;
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
 }
 
+.md-symbol {
+    color: var(--text-muted);
+    font-weight: normal;
+    margin-right: 8px;
+    user-select: none;
+}
+
+/* Input Area */
 .input-group {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    align-items: center;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 4px 4px 4px 16px;
+    margin-bottom: 30px;
+    transition: border-color 0.2s;
+}
+
+.input-group:focus-within {
+    border-color: var(--text-accent);
+}
+
+.prompt-symbol {
+    color: var(--text-accent);
+    font-family: monospace;
+    margin-right: 10px;
 }
 
 input {
     flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 15px;
+    padding: 10px 0;
+    outline: none;
 }
 
-button {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
+input::placeholder {
+    color: #555;
+}
+
+button#addBtn {
+    background-color: var(--bg-panel);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
-    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.2s;
 }
 
-button:hover {
-    background-color: #0056b3;
+button#addBtn:hover {
+    background-color: var(--border-color);
+    color: white;
 }
 
+/* Task List */
 ul {
     list-style: none;
 }
@@ -62,30 +145,45 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px;
-    background: #fdfdfd;
-    border: 1px solid #eee;
-    border-radius: 4px;
-    margin-bottom: 8px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 15px;
+}
+
+li:hover {
+    background-color: rgba(255, 255, 255, 0.02);
 }
 
 .delete-btn {
-    background-color: #dc3545;
-    padding: 6px 10px;
-    font-size: 12px;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+/* Minimalist delete button that only turns red on hover */
+li:hover .delete-btn {
+    border-color: var(--border-color);
 }
 
 .delete-btn:hover {
-    background-color: #c82333;
+    background-color: var(--danger);
+    color: white;
+    border-color: var(--danger);
 }
 
+/* Empty State */
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 #emptyMessage {
-    text-align: center;
-    color: #888;
+    color: var(--text-muted);
     font-style: italic;
-    margin-top: 10px;
+    font-size: 15px;
+    margin-top: 20px;
 }
